@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+/* _______________Navigation_______________ */
+
+.Navigation {
+  display: flex;
+  justify-content: space-between;
+  height: 5vh;
+  padding: 2% 5%;
+}
+
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+}
+
+.Ul_Nav {
+  display: flex;
+  justify-content: space-between;
+  width: 38%;
+  padding-top: 26px;
+}
+
+.Ul_Nav a {
+  color: #272d4e;
+  font-size: 18px;
+}
+
+.NavBar li {
+  list-style: none;
+}
+
+.Div_LogIn {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+  margin-top: 10px;
+}
+.Login_Nav {
+  padding-top: 13px;
+  color: #272d4e;
+  font-size: 18px;
+}
+.Registriere_Nav {
+  background: #7854f7;
+  padding: 14px 12px;
+  height: 2vh;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+/* _____________header________ */
+
+.header_home {
+  background: url(../img/bg_gradient.png) center / cover no-repeat;
+  height: 120vh;
+}
+
+.Header_Section {
+  display: flex;
+}
+
+.Header_Section h1 {
+  font-size: 85px;
+  color: #272d4e;
+  width: 100%;
+}
+
+.Header_Section p {
+  font-size: 18px;
+  color: #94a2b3;
+  width: 109%;
+  line-height: 1.5;
+  margin-top: 8%;
+}
+.Header_Section img {
+  margin-top: -6%;
+  margin-left: -9%;
+}
+.Header_Section button {
+  margin-top: 6%;
+  font-size: 18px;
+  background: #7854f7;
+  border-radius: 60px;
+  color: #fff;
+  padding: 3% 7%;
+  border: none;
+}
+
+.Header_Section_Div {
+  margin-left: 10%;
+  margin-top: 8%;
+}
+.H1_Header_Home {
+  margin-top: -5%;
+  font-size: 55px;
+  text-align: center;
+}
+
+/* _________________Home________________ */
+
+/* First_Home_Section____ */
+
+.First_Home_Section {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 2%;
+}
+.First_Home_Section img {
+  height: 36vh;
+}
+.First_Home_Section h1 {
+  font-size: 38px;
+  color: #272d4e;
+}
+.First_Home_Section p {
+  font-size: 20px;
+  width: 80%;
+  color: #94a2b3;
+  line-height: 1.6;
+  margin-top: 5%;
+}
+.First_Home_Section h5 {
+  font-size: 22px;
+  color: #299ef3;
+  margin-top: 5%;
+}
+
+.First_Home_Section figcaption {
+  margin-left: 3em;
+}
+
+.figure_Home_Verschenke {
+  margin-top: 3%;
+}
+.figure_Home_Alles {
+  margin-left: 4%;
+}
+
+.figure_Home_Umwelt {
+  margin-right: 5%;
+}
+.figure_Home_Umwelt img {
+  height: 46vh;
+}
+
+.figcaption_Home_Alles p {
+  margin-left: 15%;
+}
+.figcaption_Home_Alles h5 {
+  margin-left: 15%;
+}
+
+/* Second_Home_Section____ */
+
+.Second_Home_Section {
+  background: url(../img/Rectangle234.png) center / cover no-repeat;
+  height: 120vh;
+  margin-top: 15%;
+}
