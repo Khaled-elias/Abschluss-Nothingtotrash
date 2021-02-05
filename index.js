@@ -44,9 +44,9 @@ app.get('/', (req, res) => {
     
  
     
-    app.use(function (req, res, next) {
-        res.status(404).render('404', { title:'Error' });
-    });
+    // app.use(function (req, res, next) {
+    //     res.status(404).render('404', { title:'Error' });
+    // });
 app.set('view engine', 'ejs')
 
 app.use(cookieSession({
