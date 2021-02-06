@@ -1,3 +1,57 @@
 <%- include('./partials/header') %>
-<h1>marktplatz</h1>
+    <article class="article-Item">
+        <%newItems.forEach(element=> {%>
+            <section class="section-Item">
+                <img src="/assets/img/<%=element.image%>" alt=""></a>
+                <div class="div-Item">
+                    <h2>
+                        <%= element.titel %>
+                    </h2>
+                    <p>Space for a small product description </p>
+                    <img src="/assets/img/star.png" alt="">
+                    <table class="article-titel">
+                        <tr>
+                            <td>Fresheness</td>
+                            <td>
+                                <%= element.Frische %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Farm</td>
+                            <td>
+                                <%= element.Marke %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Delivery</td>
+                            <td>Europe</td>
+                        </tr>
+                        <tr>
+                            <td>Stock</td>
+                            <td>
+                                <%= element.Stücke %>
+                            </td>
+                        </tr>
+
+                    </table>
+
+
+                </div>
+                <div class="div-price">
+                    <h2>
+                        <%= element.result %> EUR
+                    </h2>
+                    <h2>
+                        <%= element.price %>
+                    </h2>
+
+                    <h3>Free Shipping</h3>
+                    <p>Delivery in 1 day</p>
+                    <button>Product Detail ></button>
+                    <button><img src="/assets/img/heart.png" alt=""> Add to wish list</button>
+
+                </div>
+            </section>
+            <%});%>
+    </article>
     <%- include('./partials/footer') %>

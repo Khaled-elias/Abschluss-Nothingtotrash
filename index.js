@@ -6,60 +6,100 @@ const mongoose = require('mongoose')
 const cookieSession = require('cookie-session')
 const passport = require('passport')
 require('./config/passport-setup')
-
+const ShopItem = require('./models/prodectitem')
 const authRoutes = require('./routes/authRoutes')
 const profileRoutes = require('./routes/profileRoutes')
-const PORT = process.env.PORT || 5000
-
+const PORT = process.env.PORT
 app.use(express.static('public'))
 app.set('view engine','ejs')
 app.use(express.json())
-
 app.use(express.urlencoded({extended: false}))
+app.use(express.static("public/images"));
+// test________
 
-
-
-
-
-app.get('/', (req, res) => {
-    res.render('index', {  title:'nothingtotrash Home' })
-    })
-
-    app.get('/marktplatz' ,(req,res) =>{
-        res.render('marktplatz',{title:'nothingtotrash Marktplatz'})
-    })
-
-    app.get('/community' ,(req,res) =>{
-        res.render('community',{title:'nothingtotrash Community'})
-    })
-
-    app.get('/ueber' ,(req,res) =>{
-        res.render('über',{title:'nothingtotrash Über Uns'})
-    })
-
-    app.get('/resources' ,(req,res) =>{
-        res.render('resources',{title:'nothingtotrash Resources'})
-    })
-    
-    
+// var imgModel = require('./models/prodectitem');
+// var bodyParser = require('body-parser');
+// var fs = require('fs');
+// var path = require('path')
+// app.use(bodyParser.urlencoded({ extended: false }))
+// app.use(bodyParser.json())
+// var multer = require('multer');
  
-    
-    app.use(function (req, res, next) {
-        res.status(404).render('404', { title:'Error' });
-    });
-app.set('view engine', 'ejs')
+// var storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         cb(null, 'uploads')
+//     },
+//     filename: (req, file, cb) => {
+//         cb(null, file.fieldname + '-' + Date.now())
+//     }
+// });
+ 
+// var upload = multer({ storage: storage });
+// app.get('/profile', (req, res) => {
+//     imgModel.find({}, (err, items) => {
+//         if (err) {
+//             console.log(err);
+//             res.status(500).send('An error occurred', err);
+//         }
+//         else {
+//             res.render('profile', { newItems: items });
+//         }
+//     });
+// });
+// app.post('/marktplatz', upload.single('image'), (req, res, next) => {
+ 
+//     var obj = {
+//         name: req.body.name,
+//         desc: req.body.desc,
+//         image: {
+//             data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+//             contentType: 'image/png'
+//         }
+//     }
+//     imgModel.create(obj, (err, item) => {
+//         if (err) {
+//             console.log(err);
+//         }
+//         else {
+//             // item.save();
+//             res.redirect('/marktplatz');
+//         }
+//     });
+// });
 
+//  ________________________  
+
+// app.get('/', (req, res) => {
+//     res.render('index')
+//     })
+// app.post('/add' ,(req,res) =>{
+//         console.log(req.body);
+//         const newItems=  new ShopItem(req.body)
+//         newItems.save()
+//         .then(result => res.render('marktplatz'))
+//         .catch(err => console.log(err))  
+//     })
+// app.get('/community' ,(req,res) =>{
+//         res.render('community')
+//     })
+// app.get('/ueber' ,(req,res) =>{
+//         res.render('über')
+//     })
+// app.get('/resources' ,(req,res) =>{
+//         res.render('resources')
+//     })
+    // app.use(function (req, res, next) {
+    //     res.status(404).render('404', { title:'Error' });
+    // });
+app.set('view engine', 'ejs')
 app.use(cookieSession({
     name: 'session',
     keys: ['key1', 'key2'],
-    maxAge: 1000 * 60 * 60 * 24 // Zeit in ms => das ist ein Tag
+    maxAge: 1000 * 60 * 60 * 24 
 }))
-
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Cookie-Session als Middleware installieren + configurieren
-// Dieses package SETZT einen Cookie!
 
 
 
@@ -69,75 +109,41 @@ mongoose.connect(process.env.dbUri, { useNewUrlParser: true, useUnifiedTopology:
         app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
     })
     .catch(err => console.log(err));
-
-// Installation: 
-// npm install passport-google-oauth20
-// npm i passport
-// npm install cookie-session
-
-// in der google developer console neues projekt registiren
-// OAuth - Zustimmungsbildschirm eintragen KEIN google im Namen 
-// Anmeldedaten => Oauth-Client-ID
-// Webanwendung
-// URL auf der es laufen soll
-// CLIENT_ID und CLIENT_SECRET in eurem Projekt hinterlegen
-// passport-setup eure Daten eintragen, die Callbackurl setzten und in der dev console hinzufügen
-// passport Setup / app.use
-// app.use(passport.initialize());
-// app.use(passport.session());
-// in unserer passport-setup de/serializeUser Funktion hinzugefügt
-// auth routes erstellt mit den infos aus google-auth-20 von passportjs HP
-// passport-setup importieren
-
-
-
-
-
-// app.get('/', (req, res) => {
-//     res.render('index')
-// })
-
-
-
+app.get('/', (req, res) => {
+    res.render('index')
+    })
+app.get('/marktplatz' ,(req,res) =>{
+    ShopItem.find()
+    .then(result => res.render('marktplatz',{newItems: result}))
+    .catch(err => console.log(err))
+        // console.log(req.body);
+        // res.render('marktplatz',{newItems})
+        // const newItems=  new ShopItem(req.body)
+        // newItems.save()
+        // .then(result => res.redirect('marktplatz'))
+        // .catch(err => console.log(err))  
+    })
+    app.post('/marktplatz' ,(req,res) =>{
+        console.log(req.body);
+        
+        const newItems=  new ShopItem(req.body)
+        newItems.save()
+        .then(result =>{ res.redirect('/marktplatz')})
+        .catch(err => console.log(err))  
+        
+    })
+app.get('/community' ,(req,res) =>{
+        res.render('community')
+    })
+app.get('/ueber' ,(req,res) =>{
+        res.render('über')
+    })
+app.get('/resources' ,(req,res) =>{
+        res.render('resources')
+    })
+    // app.use(function (req, res, next) {
+    //     res.status(404).render('404', { title:'Error' });
+    // });
 
 app.use('/auth', authRoutes)
 app.use('/profile', profileRoutes)
-
-
-// require('dotenv').config()
-
-// const express = require('express')
-// const app = express()
-// const passport = require('passport')
-// const cookieSession = require('cookie-session')
-// require('./config/passport-setup')
-// const authRoutes = require('./routes/authRoutes')
-// const profileRoutes = require('./routes/profileRoutes')
-
-// const mongoose = require('mongoose')
-
-// mongoose.connect(process.env.dbUri,{useNewUrlParser: true, useUnifiedTopology: true})
-// .then(result =>{
-// app.listen(process.env.PORT,()=> console.log(`http://localhost:${process.env.PORT}`))
-// })
-// .catch(err => console.log(err))
-
-
-// app.use(express.static('public'))
-// app.set('view engine','ejs')
-// app.use(express.json())
-// app.use(express.urlencoded({extended: false}))
-// app.use(cookieSession({
-//     name: 'session',
-//     keys: ['key1', 'key2'],
-//     maxAge: 1000 * 60 * 60 * 24 
-// }))
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-// app.get('/', (req, res) => {
-//     res.render('home')
-// })
-// app.use('/auth', authRoutes)
-// app.use('/profile', profileRoutes)
-

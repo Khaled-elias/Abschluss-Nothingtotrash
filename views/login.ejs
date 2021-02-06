@@ -1,15 +1,54 @@
-<%- include('./partials/header') %>
-    <a href="/auth/google">
-        <div class="google-btn">
-            <div class="google-icon-wrapper">
-                <img class="google-icon"
-                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
-            </div>
-            <p class="btn-text"><b>Sign in with google</b></p>
-        </div>
-    </a>
-    <ul>
-        <li><a href="/profile">Profil</a></li>
-    </ul>
+<!DOCTYPE html>
+<html lang="en">
 
-    <%- include('./partials/footer') %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+        <section class="section-login">
+            <h1 class="login-title">Registriere Dich
+                & nimm Teil</h1>
+            <div class="display-none">
+                <img class="img1" src="/assets/img/1.png" alt="">
+                <img class="img2" src="/assets/img/2.png" alt="">
+                <img class="img3" src="/assets/img/3.png" alt="">
+                <img class="img4" src="/assets/img/4.png" alt="">
+                <img class="img5" src="/assets/img/5.png" alt="">
+                <img class="img6" src="/assets/img/6.png" alt="">
+            </div>
+
+            <article class="article-login">
+                <div class="google-login">
+                    <h1>Sign Up with </h1>
+                    <img src="/assets/img/google.png" alt="">
+                    <a href="/auth/google">
+                        <div class="google-btn">
+                            <div class="google-icon-wrapper">
+                                <img class="google-icon"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                            </div>
+                            <p class="btn-text"><b>Sign in with google</b></p>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="div-img">
+                    <img class="img7" src="/assets/img/7.png" alt="">
+                    <img class="img8" src="/assets/img/8.png" alt="">
+                </div>
+
+            </article>
+
+        </section>
+
+        <!--
+        <ul>
+            <li><a href="/profile">Profil</a></li>
+        </ul> -->
+
+        <%- include('./partials/footer') %>
