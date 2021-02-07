@@ -9,88 +9,23 @@ require('./config/passport-setup')
 const ShopItem = require('./models/prodectitem')
 const authRoutes = require('./routes/authRoutes')
 const profileRoutes = require('./routes/profileRoutes')
+const bodyParser = require('body-parser');
+
 const PORT = process.env.PORT
 app.use(express.static('public'))
 app.set('view engine','ejs')
 app.use(express.json())
+
 app.use(express.urlencoded({extended: false}))
 app.use(express.static("public/images"));
-// test________
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// var imgModel = require('./models/prodectitem');
-// var bodyParser = require('body-parser');
-// var fs = require('fs');
-// var path = require('path')
-// app.use(bodyParser.urlencoded({ extended: false }))
-// app.use(bodyParser.json())
-// var multer = require('multer');
- 
-// var storage = multer.diskStorage({
-//     destination: (req, file, cb) => {
-//         cb(null, 'uploads')
-//     },
-//     filename: (req, file, cb) => {
-//         cb(null, file.fieldname + '-' + Date.now())
-//     }
-// });
- 
-// var upload = multer({ storage: storage });
-// app.get('/profile', (req, res) => {
-//     imgModel.find({}, (err, items) => {
-//         if (err) {
-//             console.log(err);
-//             res.status(500).send('An error occurred', err);
-//         }
-//         else {
-//             res.render('profile', { newItems: items });
-//         }
-//     });
-// });
-// app.post('/marktplatz', upload.single('image'), (req, res, next) => {
- 
-//     var obj = {
-//         name: req.body.name,
-//         desc: req.body.desc,
-//         image: {
-//             data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
-//             contentType: 'image/png'
-//         }
-//     }
-//     imgModel.create(obj, (err, item) => {
-//         if (err) {
-//             console.log(err);
-//         }
-//         else {
-//             // item.save();
-//             res.redirect('/marktplatz');
-//         }
-//     });
-// });
+// test______________________________-
 
-//  ________________________  
 
-// app.get('/', (req, res) => {
-//     res.render('index')
-//     })
-// app.post('/add' ,(req,res) =>{
-//         console.log(req.body);
-//         const newItems=  new ShopItem(req.body)
-//         newItems.save()
-//         .then(result => res.render('marktplatz'))
-//         .catch(err => console.log(err))  
-//     })
-// app.get('/community' ,(req,res) =>{
-//         res.render('community')
-//     })
-// app.get('/ueber' ,(req,res) =>{
-//         res.render('über')
-//     })
-// app.get('/resources' ,(req,res) =>{
-//         res.render('resources')
-//     })
-    // app.use(function (req, res, next) {
-    //     res.status(404).render('404', { title:'Error' });
-    // });
+//  ______________________________________________ 
+
+
 app.set('view engine', 'ejs')
 app.use(cookieSession({
     name: 'session',
@@ -115,23 +50,42 @@ app.get('/', (req, res) => {
 app.get('/marktplatz' ,(req,res) =>{
     ShopItem.find()
     .then(result => res.render('marktplatz',{newItems: result}))
-    .catch(err => console.log(err))
-        // console.log(req.body);
-        // res.render('marktplatz',{newItems})
-        // const newItems=  new ShopItem(req.body)
-        // newItems.save()
-        // .then(result => res.redirect('marktplatz'))
-        // .catch(err => console.log(err))  
+    .catch(err => console.log(err)) 
     })
-    app.post('/marktplatz' ,(req,res) =>{
+
+    app.post('/add' ,(req,res) =>{
         console.log(req.body);
         
         const newItems=  new ShopItem(req.body)
         newItems.save()
-        .then(result =>{ res.redirect('/marktplatz')})
+        .then(result => res.redirect('/marktplatz'))
         .catch(err => console.log(err))  
         
     })
+
+    app.post('/marktplatz/search' ,(req,res) =>{
+
+        const searchedValue = req.body.Search;
+        ShopItem.find()
+        .then(result => {
+            let finalResult = [];
+
+            if(searchedValue !== ''){
+                result.forEach(item => {
+                    if(item.titel.includes(searchedValue) || item.kategorie.includes(searchedValue)){
+                        finalResult.push(item)
+                    }
+                })
+            }
+            res.render('marktplatz',{newItems: finalResult})
+        })
+        .catch(err => console.log(err))
+
+        // res.render("marktplatz", { newItems: result })
+    })
+    // SEARCH___________________-
+  
+    //   _______________________-
 app.get('/community' ,(req,res) =>{
         res.render('community')
     })
@@ -144,6 +98,14 @@ app.get('/resources' ,(req,res) =>{
     // app.use(function (req, res, next) {
     //     res.status(404).render('404', { title:'Error' });
     // });
+    // details__________________________
+    app.get('/details/:id', (req, res) => {
+        // console.log(req.params.id);
+        ShopItem.findById(req.params.id)
+        // ShopItem.find()
+        .then(result => res.render('details',{Details: result}))
+        .catch(err => console.log(err))
+    })
 
 app.use('/auth', authRoutes)
 app.use('/profile', profileRoutes)

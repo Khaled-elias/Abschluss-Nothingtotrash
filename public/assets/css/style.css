@@ -10,6 +10,12 @@
 a {
   text-decoration: none;
 }
+li {
+  list-style: none;
+}
+body {
+  width: 100%;
+}
 
 /* _______________Navigation_______________ */
 
@@ -71,25 +77,24 @@ a {
 
 .Header_Section {
   display: flex;
+  justify-content: space-between;
 }
 
 .Header_Section h1 {
   font-size: 85px;
   color: #272d4e;
-  width: 100%;
+  width: 130%;
+  margin-top: 20%;
 }
 
 .Header_Section p {
   font-size: 18px;
   color: #94a2b3;
-  width: 109%;
+  width: 142%;
   line-height: 1.5;
   margin-top: 8%;
 }
-.Header_Section img {
-  margin-top: -6%;
-  margin-left: -9%;
-}
+
 .Header_Section button {
   margin-top: 6%;
   font-size: 18px;
@@ -109,6 +114,8 @@ a {
   font-size: 55px;
   text-align: center;
 }
+
+/* _____________HeaderMarkt________ */
 
 /* _________________Home________________ */
 
@@ -168,8 +175,120 @@ a {
 
 .Second_Home_Section {
   background: url(../img/Rectangle234.png) center / cover no-repeat;
-  height: 120vh;
+  height: 112vh;
   margin-top: 15%;
+}
+.First_Article_violet {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+.First_punkt_foto {
+  position: absolute;
+  left: 8%;
+  top: 65%;
+  height: 50vh;
+}
+
+.girl_foto {
+  height: 65vh;
+  margin: -4% 4% 0 13%;
+  position: relative;
+}
+
+.First_Article_violet h1 {
+  color: #fff;
+  font-size: 46px;
+  padding-top: 13%;
+}
+
+.First_Article_violet p {
+  color: #fff;
+  width: 47%;
+  font-size: 18px;
+  margin-top: 4%;
+  line-height: 1.4;
+}
+.First_Article_violet button {
+  background: #70c217;
+  color: #fff;
+  border: none;
+  padding: 2% 5%;
+  border-radius: 60px;
+  margin-top: 6%;
+}
+
+.Second_Article_violet {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.Young_Foto {
+  height: 65vh;
+  z-index: 3;
+  position: relative;
+  margin-right: 6%;
+  margin-top: -2%;
+}
+
+.Second_punkt_foto {
+  height: 27vh;
+  position: absolute;
+  right: 4%;
+  top: 15%;
+}
+.Text_Know {
+  margin-left: 30%;
+  margin-top: -6%;
+}
+
+.Second_Article_violet h1 {
+  color: #fff;
+  font-size: 46px;
+  padding-top: 4em;
+}
+.Second_Article_violet p {
+  color: #fff;
+  width: 87%;
+  font-size: 18px;
+  margin-top: 7%;
+  line-height: 1.4;
+}
+
+.Second_Article_violet button {
+  background: #70c217;
+  color: #fff;
+  border: none;
+  padding: 4% 9%;
+  border-radius: 60px;
+  margin-top: 10%;
+}
+
+.Third_Home_Section {
+  margin-top: 15%;
+  margin-bottom: -4px;
+}
+
+.Text_Supported {
+  text-align: center;
+}
+.Text_Supported h1 {
+  font-size: 55px;
+  color: #272d4e;
+}
+
+.Text_Supported p {
+  font-size: 18px;
+  color: #94a2b3;
+  margin-top: 2%;
+  line-height: 1.5;
+}
+
+.People_Foto {
+  width: 98%;
+  margin-left: 2%;
+  margin-top: 3%;
 }
 
 /* login Style_____________ */
@@ -265,39 +384,6 @@ a {
   margin-bottom: 20%;
 }
 
-/* GOOGLE STYLE */
-
-/* .google-btn {
-  width: 184px;
-  height: 42px;
-  background-color: #4285f4;
-  border-radius: 2px;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
-}
-.google-btn .google-icon-wrapper {
-  position: absolute;
-  margin-top: 1px;
-  margin-left: 1px;
-  width: 40px;
-  height: 40px;
-  border-radius: 2px;
-  background-color: #fff;
-}
-.google-btn .google-icon {
-  position: absolute;
-  margin-top: 11px;
-  margin-left: 11px;
-  width: 18px;
-  height: 18px;
-}
-.google-btn .btn-text {
-  float: right;
-  margin: 11px 11px 0 0;
-  color: #fff;
-  font-size: 14px;
-  letter-spacing: 0.2px;
-  font-family: "Roboto";
-} */
 .btn-text {
   color: inherit;
   font-size: 25px;
@@ -323,34 +409,120 @@ a {
   display: none;
   margin-top: 10px;
 }
-/* .center {
-  height: 100%;
+
+/* ______________Footer____________ */
+
+#Text_Footer {
+  background: #5f37ef;
+  height: 24vh;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1%;
+}
+.Text_Footer h2 {
+  color: #fff;
+  padding: 1% 3%;
+  width: 40%;
+  height: 2vh;
+  font-size: 36px;
+  line-height: 1.8;
+  font-weight: bold;
+}
+.Text_Footer span {
+  font-weight: 99;
+}
+
+.Text_Footer h3 {
+  background: #5f37ef;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 1% 3%;
+  margin-top: 3%;
+  border-radius: 60px;
+  height: 2vh;
+}
+
+.Footer_Section {
+  background: #7854f7;
+  height: 80vh;
+}
+
+.Ring_Foto {
+  margin-left: 80%;
+  margin-top: -4%;
+  margin-bottom: 4%;
+}
+
+.Figure_Footer {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
-
-.form-input input {
-  display: none;
-}
-.form-input label {
-  display: block;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  background: #333;
+.Figure_Footer h3 {
   color: #fff;
-  font-size: 15px;
-  font-family: "Open Sans", sans-serif;
-  text-transform: Uppercase;
-  font-weight: 600;
-  border-radius: 10px;
-  cursor: pointer;
+  font-size: 20px;
+  margin-left: 18px;
+  font-weight: 99;
+}
+.Figure_Footer span {
+  font-weight: bold;
+}
+.Footer_Scloss {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #9a7dff;
+  padding-bottom: 15%;
+  margin: 0 7%;
 }
 
-.form-input img {
-  width: 100%;
-  display: none;
+.Article_Footer {
+  color: #fff;
+  display: grid;
+  grid-template-columns: 20% 20% 20%;
+  width: 90%;
+  margin-left: 30%;
+  margin-top: 6%;
+}
+.Article_Footer a {
+  color: #fff;
+}
+.Article_Footer li {
   margin-top: 10px;
-} */
+}
+
+/* ___FooterIcons________ */
+.Footer_icons {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  height: 6vh;
+  padding-top: 4%;
+}
+
+.Footer_icons ul {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+  margin-left: 10%;
+}
+.Footer_icons h4 {
+  color: #272d4e;
+  font-size: 16px;
+}
+.Footer_icons span {
+  text-decoration: underline;
+}
+
+/* ProfileSeiteStyle_____________ */
+.div-googleLogin {
+  display: flex;
+  flex-direction: column;
+}
+.div-googleLogin article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.div-googleLogin img {
+  clip-path: circle();
+  width: 25%;
+}

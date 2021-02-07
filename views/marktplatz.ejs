@@ -1,8 +1,12 @@
 <%- include('./partials/header') %>
+    <form action="/marktplatz/search" Method="POST" onSubmit="(e) => { console.log(e)}">
+        <input type="search" name="Search" id="">
+        <input type="submit">
+    </form>
     <article class="article-Item">
         <%newItems.forEach(element=> {%>
             <section class="section-Item">
-                <img src="/assets/img/<%=element.image%>" alt=""></a>
+                <img src="/assets/image/<%=element.image%>" alt="">
                 <div class="div-Item">
                     <h2>
                         <%= element.titel %>
@@ -47,11 +51,14 @@
 
                     <h3>Free Shipping</h3>
                     <p>Delivery in 1 day</p>
-                    <button>Product Detail ></button>
+                    <a href="/details/<%= element._id %>">Product Detail
+                        ></a>
                     <button><img src="/assets/img/heart.png" alt=""> Add to wish list</button>
 
                 </div>
             </section>
             <%});%>
     </article>
+
+
     <%- include('./partials/footer') %>

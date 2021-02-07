@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <section class="container-detail">
+        <div class="div-detail">
+            <h2>
+                <%= Details.titel %>
+            </h2>
+            <p>Space for a small product description </p>
+            <img src="/assets/img/star.png" alt="">
+            <table class="table-detail">
+
+                <tr>
+                    <td>Farm</td>
+                    <td>
+                        <%= Details.Marke %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Delivery</td>
+                    <td>Europe</td>
+                </tr>
+                <tr>
+                    <td>Stock</td>
+                    <td>
+                        <%= Details.Stücke %> pcs
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="desc-detail">
+            <h2>
+                <%= Details.result %> EUR
+            </h2>
+            <h2>
+                <%= Details.price %>
+            </h2>
+            <h3>Free Shipping</h3>
+            <p>Delivery in 1 day</p>
+            <a href="">Reservieren ></a>
+            <h1>Probieren Sie es Mal mit Gemütlichkeit</h1>
+            <h4>
+                <%= Details.Beschreibung %>
+            </h4>
+        </div>
+    </section>
+    <section class="container-image">
+        <img src="/assets/image/<%=Details.image%>" alt="">
+    </section>
+</body>
+
+</html>

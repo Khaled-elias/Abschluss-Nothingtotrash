@@ -37,10 +37,10 @@ router.get('/google/callback',
     });
 router.get('/logout', (req, res) => {
     req.logout();
-    res.redirect('/')
+    res.redirect('login')
 })
 router.get('/login', (req, res) => {
-    res.render('login')
+    res.render('login' , { newItems1: req.user })
 })
 
 module.exports = router
