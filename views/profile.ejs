@@ -1,5 +1,129 @@
-<%- include('./partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
 
-    <%= JSON.stringify(data)%>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
 
-        <%- include('./partials/footer') %>
+<body class="Profile_main">
+    <%- include('./partials/navGoogle') %>
+        <%#= JSON.stringify(data)%>
+            <form action="/add" method="POST" class="bietForm">
+                <section class="section-form">
+                    <article class="anzeigenType">
+
+                        <p>Anzeigentyp :</p>
+                        <p>Titel der Anzeige :</p>
+                        <p>Beschreibung :</p>
+                        <p>Preis :</p>
+                       
+                        <!-- <p>Marke :</p>
+                        <p>Stüke :</p>
+                        <p>Frische :</p> -->
+                    </article>
+                    <article class="article-input">
+                        <h2>Ich biete:</h2>
+
+                        <input class="Input_Title" type="text" name="titel"><br>
+
+                        <textarea class="Text_area" name="Beschreibung" cols="80" rows="10"></textarea>
+
+                        <div class="form-radio">
+
+                            <input class="preis_input" type="text" name="result">
+                            <br>
+                            <label for="Festprice">Festprice</label>
+                            <input type="radio" name="price" value="Festprice" id="Festprice">
+
+                            <label for="vb">VB</label>
+                            <input type="radio" name="price" value="VB" id="other">
+                            <label for="Verschenken">Zu Verschenken</label>
+                            <input type="radio" name="price" value="zu verschenken" id="other">
+                        </div>
+                    </section>
+                        <div class="center">
+                            <h1>Bilder :</h1>
+                            <div class="form-input_img">
+                                <label for="file-ip-1" name="image"><img src="/assets/img/camera.png" alt=""></label>
+
+                                <div class="preview">
+                                    <img id="file-ip-1-preview">
+                                </div>
+                                <div class="Bilder_hinzufugen">
+                                    <label class="Bilder_hinzufugen" for="file-ip-1" name="image"><img src="/assets/img/camera1.png" alt=""> Bilder
+                                        hinzufügen</label>
+                                   
+                                    </div>
+
+                            </div>
+                            
+                          
+                        </div>
+                        <div class="profile-table">
+
+                            <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);"
+                            name="image" required>
+                            <input type="text" name="Marke" placeholder="Farm">
+                            <input type="number" name="Stücke" placeholder="Stüke">
+
+                            <label for="New">New</label>
+                            <input type="radio" name="Frische" value="New" id="other">
+                            <label for="Used">Used</label>
+                            <input type="radio" name="Frische" value="Used" id="other">
+                        </div>
+
+
+                    </article>
+               
+                <section class="section_kath">
+                    <h2>Kategorisierung</h2>
+                    <div class="div-kath">
+                        <p>Kategorie</p>
+                        <select id="" name="kategorie">
+                            <option value="Möbel">Möbel</option>
+                            <option value="Klamotten">Klamotten</option>
+                            <option value="Elektronik">Elektronik</option>
+                            <option value="Spielzeuge">Spielzeuge</option>
+                        </select>
+
+                    </div>
+                </section>
+                <section class="section_ort">
+                    <h2>Ort</h2>
+                    <div class="div-plz">
+                        <label for="">PLZ*</label>
+                        <input type="text" name="PLZ" id="" placeholder="PLZ">
+                        <input type="text" name="Ort" id="" placeholder="Ort">
+                    </div>
+                    <div class="div-strass">
+                        <label for="">Straße/Nr.*</label>
+                        <input type="text" name="strasse" id="">
+                    </div>
+                    <div class="div-strass">
+                        <label for="">Name*</label>
+                        <input type="text" name="Name" id="">
+                    </div>
+                    <div class="div-Telefonnummer">
+                        <label for="">Telefonnummer*</label>
+                        <input type="text" name="number" id="">
+                    </div>
+                </section>
+                <input type="submit" value="Send">
+            </form>
+            <script>
+                function showPreview(event) {
+                    if (event.target.files.length > 0) {
+                        var src = URL.createObjectURL(event.target.files[0]);
+                        var preview = document.getElementById("file-ip-1-preview");
+                        preview.src = src;
+                        preview.style.display = "block";
+                    }
+                }
+            </script>
+        <footer class="footer_profile">
+            <%- include('./partials/footericons') %>
+
+        </footer>

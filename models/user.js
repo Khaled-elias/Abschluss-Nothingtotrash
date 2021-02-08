@@ -5,8 +5,10 @@ const UserSchema = new Schema({
     googleId: String,
     userName: String,
     firstName: String,
-    email: String,
-    url_picture: String
+    lastName:String,
+    
+    url_picture: String,
+    
 })
 
 const User = mongoose.model('user', UserSchema)

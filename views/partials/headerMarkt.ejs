@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     
     
-    <title> <%= title  %></title>
+    <title> Document</title>
 </head>
 
 <body>
@@ -19,10 +19,10 @@
     <section class="HeaderMarkt_Section">
         <div class="HeaderMarkt_Section_Div">
 
-            <h1>Hilf mit die Umwelt zu schützen und nothingtotrash.</h1>
+            <h1>Hilf mit die Umwelt <br> zu schützen und <br>nothingtotrash.</h1>
 
             <p>Abfälle bedrohen Vögel, Delfine und Co. Mehr als zehn Millionen Tonnen Abfälle gelangen jährlich in die Ozeane.
-
+            <br> 
             Sie kosten Abertausende Meerestiere das Leben. Seevögel verwechseln Plastik mit natürlicher Nahrung, 
 
             <br> 
@@ -34,10 +34,19 @@
         </div>
            
     </section>
+    <div class="Div_Form">
+    <form id="Form_Marktplatz" action="/marktplatz/search" Method="POST" onSubmit="(e) => { console.log(e)}">
+        
+        <select id="AusWahl_Kategorie" name="kategorie">
+            <option value="Möbel">Möbel</option>
+            <option value="Klamotten">Klamotten</option>
+            <option value="Elektronik">Elektronik</option>
+            <option value="Spielzeuge">Spielzeuge</option>
+        </select>
 
-    <h1 class="H1_HeaderMarkt_Home">Lebe eCommerce 
-        <br> 
-        mal anders</h1>
-    
+        <input class="Input_Markt" type="search" name="Search" id="" placeholder="Suche nach Produkten....">
+        <input class="Input_Markt Input_Search" type="submit" value="Suche">
 
+    </form>
+    </div>
     </header>       

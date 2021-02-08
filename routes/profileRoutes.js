@@ -22,6 +22,7 @@ const express = require('express');
 const router = express.Router()
 
 
+
 const authCheck = (req, res, next) => {
     // console.log(req)
     if (!req.user) {
@@ -34,6 +35,6 @@ const authCheck = (req, res, next) => {
 router.get('/', authCheck, (req, res) => {
     // res.render('profile')
     console.log("Profile:", req.user);
-    res.render('profile', { data: req.user })
+    res.render('profile', { newItems1: req.user })
 })
 module.exports = router

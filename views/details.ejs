@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="body_details">
+    <section class="container-detail">
+        <div class="div-detail">
+            <h2 class="name_Title">
+                <%= Details.titel %>
+            </h2>
+            <p>Platz für eine kleine Produktbeschreibung </p>
+            <img src="/assets/img/star.png" alt="">
+            <table class="table-detail">
+
+                <tr>
+                    <td>Firma :</td>
+                    <td>
+                        <%= Details.Marke %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lieferung :</td>
+                    <td>Europe</td>
+                </tr>
+                <tr>
+                    <td>Auf Lager :</td>
+                    <td class="stock_element">
+                        <%= Details.Stücke %> pcs
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="desc-detail">
+            <h2>
+                <%= Details.result %> EUR
+            </h2>
+            <h2>
+                <%= Details.price %>
+            </h2>
+            <h3>Kostenloser Versand</h3>
+            <p>Lieferung in 1 Tag</p>
+            <a class="reservieren" href="">Reservieren ></a>
+            <h1>Probieren Sie es Mal mit Gemütlichkeit</h1>
+            <h4>
+                <%= Details.Beschreibung %>
+            </h4>
+        </div>
+    </section>
+    <section class="container-image">
+        <img src="/assets/image/<%=Details.image%>" alt="">
+    </section>
+</body>
+
+</html>
