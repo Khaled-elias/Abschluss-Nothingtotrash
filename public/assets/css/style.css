@@ -1031,3 +1031,71 @@ li {
   clip-path: circle();
   width: 25%;
 }
+
+/* ______________burger________ */
+.Burger {
+  display: none;
+}
+.Hamburger_menu {
+  width: 35px;
+  height: 35px;
+
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.line {
+  width: 100%;
+  height: 3px;
+  background: orange;
+  transition: all 0.8s;
+}
+.change .line1 {
+  transform: rotate(-405deg) translate(-10px, 6px);
+}
+.change .line2 {
+  opacity: 0;
+}
+.change .line3 {
+  transform: rotate(405deg) translate(-10px, -6px);
+}
+@media only screen and (max-width: 1500px) {
+  .Navigation {
+    overflow-x: hidden;
+  }
+  .Burger {
+    display: block;
+  }
+
+  .Ul_Nav {
+    position: absolute;
+    right: 0px;
+    top: 8vh;
+    height: 92vh;
+    background: red;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(0%);
+  }
+  .nav-active {
+    transform: translateX(100%);
+    transition: all 0.8s;
+  }
+
+  .Div_LogIn {
+    display: none;
+  }
+  .logo_nothing {
+    height: 3vh;
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 1320px) {
+  .Footer_icons {
+    width: 90%;
+  }
+}
