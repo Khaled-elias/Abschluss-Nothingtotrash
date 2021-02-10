@@ -4,49 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="/assets/css/style.css">
-    
-    
+
+
     <title> Document</title>
 </head>
 
 <body>
 
     <header class="header_home">
-    <%- include('./nav') %>
+        <%- include('./nav') %>
 
-    <section class="HeaderMarkt_Section">
-        <div class="HeaderMarkt_Section_Div">
+            <section class="HeaderMarkt_Section">
+                <div class="HeaderMarkt_Section_Div">
 
-            <h1>Hilf mit die Umwelt <br> zu schützen und <br>nothingtotrash.</h1>
+                    <h1>Hilf mit die Umwelt <br> zu schützen und <br>nothingtotrash.</h1>
 
-            <p>Abfälle bedrohen Vögel, Delfine und Co. Mehr als zehn Millionen Tonnen Abfälle gelangen jährlich in die Ozeane.
-            <br> 
-            Sie kosten Abertausende Meerestiere das Leben. Seevögel verwechseln Plastik mit natürlicher Nahrung, 
+                    <p>Abfälle bedrohen Vögel, Delfine und Co. Mehr als zehn Millionen Tonnen Abfälle gelangen jährlich
+                        in die Ozeane.
+                        <br>
+                        Sie kosten Abertausende Meerestiere das Leben. Seevögel verwechseln Plastik mit natürlicher
+                        Nahrung,
 
-            <br> 
-            Delfine verfangen sich in alten Fischernetzen. Hilf mit Müll zu reduzieren und trashnothing.
-            </p>
+                        <br>
+                        Delfine verfangen sich in alten Fischernetzen. Hilf mit Müll zu reduzieren und trashnothing.
+                    </p>
 
-               
 
-        </div>
-           
-    </section>
-    <div class="Div_Form">
-    <form id="Form_Marktplatz" action="/marktplatz/search" Method="POST" onSubmit="(e) => { console.log(e)}">
-        
-        <select id="AusWahl_Kategorie" name="kategorie">
-            <option value="Möbel">Möbel</option>
-            <option value="Klamotten">Klamotten</option>
-            <option value="Elektronik">Elektronik</option>
-            <option value="Spielzeuge">Spielzeuge</option>
-        </select>
 
-        <input class="Input_Markt" type="search" name="Search" id="" placeholder="Suche nach Produkten....">
-        <input class="Input_Markt Input_Search" type="submit" value="Suche">
+                </div>
 
-    </form>
-    </div>
-    </header>       
+            </section>
+            <div class="Div_Form">
+                <form id="Form_Marktplatz" action="/marktplatz/search" Method="POST"
+                    onSubmit="(e) => { console.log(e)}">
+
+                    <select id="AusWahl_Kategorie" name="kategorie">
+                        <option value="Möbel">Möbel</option>
+                        <option value="Klamotten">Klamotten</option>
+                        <option value="Elektronik">Elektronik</option>
+                        <option value="Spielzeuge">Spielzeuge</option>
+                    </select>
+
+                    <input class="Input_Markt" type="search" name="Search" id="" placeholder="Suche nach Produkten....">
+                    <input class="Input_Markt Input_Search" type="submit" value="Suche">
+
+                </form>
+            </div>
+    </header>
