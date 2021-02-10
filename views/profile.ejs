@@ -10,6 +10,7 @@
 
 
 <body class="Profile_main">
+
     <%- include('./partials/navGoogle') %>
         <%#= JSON.stringify(data)%>
             <form action="/add" method="POST" class="bietForm">
@@ -31,7 +32,7 @@
                         <div class="biete-div">
 
                             <h2>Ich biete:</h2>
-                            <a href="">
+                            <a href="/marktplatz">
                                 <h2>Ich suche:</h2>
                             </a>
                         </div>
@@ -85,7 +86,7 @@
                             <div>
 
                                 <label for="New">New</label>
-                                <input type="radio" name="Frische" value="New" id="other">
+                                <input type="radio" name="Frische" value="New" id="other" class="otherNew">
                                 <label for="Used">Used</label>
                                 <input type="radio" name="Frische" value="Used" id="other">
                             </div>
@@ -146,3 +147,4 @@
                 <%- include('./partials/footericons') %>
 
             </footer>
+            <script src="/assets/js/main.js"></script>

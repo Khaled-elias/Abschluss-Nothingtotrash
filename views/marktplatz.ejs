@@ -7,60 +7,63 @@
 
                 <section class="section-Item">
 
-                    <img id="Produkt_img" src="/assets/image/<%=element.image%>" alt="">
+                    <a href="/details/<%= element._id %>"><img id="Produkt_img" src="/assets/image/<%=element.image%>"
+                            alt=""></a>
+
+                    <article class="article-divItem">
+                        <div class="div-Item">
+                            <h2>
+                                <%= element.titel %>
+                            </h2>
+
+                            <img src="/assets/img/star.png" alt="">
+                            <table class="article-titel">
+                                <tr class="table-tr">
+                                    <td>Zustand :</td>
+                                    <td class="Fresheness_element">
+                                        <%= element.Frische %>
+                                    </td>
+                                </tr>
+                                <tr class="table-tr">
+                                    <td>Firma :</td>
+                                    <td>
+                                        <%= element.Marke %>
+                                    </td>
+                                </tr>
+                                <tr class="table-tr">
+                                    <td>Lieferung :</td>
+                                    <td>Europe</td>
+                                </tr>
+                                <tr class="table-tr">
+                                    <td>Auf Lager :</td>
+                                    <td class="stock_element">
+                                        <%= element.Stücke %>
+                                    </td>
+                                </tr>
+
+                            </table>
 
 
-                    <div class="div-Item">
-                        <h2>
-                            <%= element.titel %>
-                        </h2>
-                        <p>Platz für eine kleine Produktbeschreibung </p>
-                        <img src="/assets/img/star.png" alt="">
-                        <table class="article-titel">
-                            <tr>
-                                <td>Zustand :</td>
-                                <td class="Fresheness_element">
-                                    <%= element.Frische %>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Firma :</td>
-                                <td>
-                                    <%= element.Marke %>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Lieferung :</td>
-                                <td>Europe</td>
-                            </tr>
-                            <tr>
-                                <td>Auf Lager :</td>
-                                <td class="stock_element">
-                                    <%= element.Stücke %>
-                                </td>
-                            </tr>
+                        </div>
+                        <div class="div-price">
+                            <h2>
+                                <%= element.result %> EUR
+                            </h2>
+                            <h2>
+                                <%= element.price %>
+                            </h2>
 
-                        </table>
+                            <h3>Versand möglich
+                            </h3>
+                            <p>Lieferung in 1 Tag</p>
+                            <a class="Detail_Product_a" href="/details/<%= element._id %>">Produktdetails
+                                ></a>
+                            <br>
+                            <button class="Favorite_button"><img src="/assets/img/heart.png" alt=""> Zur Wunschliste
+                                hinzufügen</button>
 
-
-                    </div>
-                    <div class="div-price">
-                        <h2>
-                            <%= element.result %> EUR
-                        </h2>
-                        <h2>
-                            <%= element.price %>
-                        </h2>
-
-                        <h3>Kostenloser Versand</h3>
-                        <p>Lieferung in 1 Tag</p>
-                        <a class="Detail_Product_a" href="/details/<%= element._id %>">Produktdetails
-                            ></a>
-                        <br>
-                        <button class="Favorite_button"><img src="/assets/img/heart.png" alt=""> Zur Wunschliste
-                            hinzufügen</button>
-
-                    </div>
+                        </div>
+                    </article>
                 </section>
                 <%});%>
         </article>
