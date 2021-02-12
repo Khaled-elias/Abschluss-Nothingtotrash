@@ -103,7 +103,7 @@ app.get('/resources' ,(req,res) =>{
         // console.log(req.params.id);
         ShopItem.findById(req.params.id)
         // ShopItem.find()
-        .then(result => res.render('details',{Details: result}))
+        .then(result => res.render('details',{newItems1: result}))
         .catch(err => console.log(err))
     })
 

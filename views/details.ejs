@@ -1,51 +1,56 @@
 <%- include('./partials/nav') %>
-    <section class="container-detail">
-        <div class="div-detail">
-            <h2 class="name_Title">
-                <%= Details.titel %>
-            </h2>
-            <!-- <p>Platz für eine kleine Produktbeschreibung </p> -->
-            <img src="/assets/img/star.png" alt="">
-            <table class="table-detail">
+    <article class="article-detail-flex">
+        <section class="container-image">
+            <img src="/assets/image/<%=newItems1.image%>" alt="">
+        </section>
+        <section class="container-detail">
+            <div class="div-detail">
+                <h2 class="name_Title">
+                    <%= newItems1.titel %>
+                </h2>
+                <!-- <p>Platz für eine kleine Produktbeschreibung </p> -->
+                <img src="/assets/img/star.png" alt="" class="image-details-Star">
+                <table class="table-detail">
 
-                <tr>
-                    <td>Firma :</td>
-                    <td>
-                        <%= Details.Marke %>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Lieferung :</td>
-                    <td>Europe</td>
-                </tr>
-                <tr>
-                    <td>Auf Lager :</td>
-                    <td class="stock_element">
-                        <%= Details.Stücke %> pcs
-                    </td>
-                </tr>
+                    <tr>
+                        <td>Firma :</td>
+                        <td>
+                            <%= newItems1.Marke %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Lieferung :</td>
+                        <td>Europe</td>
+                    </tr>
+                    <tr>
+                        <td>Auf Lager :</td>
+                        <td class="stock_element">
+                            <%= newItems1.Stücke %> pcs
+                        </td>
+                    </tr>
 
-            </table>
-        </div>
-        <div class="desc-detail">
-            <h2>
-                <%= Details.result %> EUR
-            </h2>
-            <h2>
-                <%= Details.price %>
-            </h2>
-            <h3>Kostenloser Versand</h3>
-            <p>Lieferung in 1 Tag</p>
-            <a class="reservieren" href="">Reservieren ></a>
-            <!-- <h1>Wie gefällt dir das Produkt</h1> -->
-            <h4>
-                <%= Details.Beschreibung %>
-            </h4>
-        </div>
-    </section>
-    <section class="container-image">
-        <img src="/assets/image/<%=Details.image%>" alt="">
-    </section>
+                </table>
+            </div>
+            <div class="desc-detail">
+                <h2>
+                    <%= newItems1.result %> EUR
+                </h2>
+                <h2>
+                    <%= newItems1.price %>
+                </h2>
+                <h3>Kostenloser Versand</h3>
+                <p>Lieferung in 1 Tag</p>
+                <a class="reservieren" href="">Reservieren ></a>
+                <!-- <h1>Wie gefällt dir das Produkt</h1> -->
+                <h6>
+                    <%= newItems1.Beschreibung %>
+                </h6>
+
+                </h4>
+            </div>
+        </section>
+
+    </article>
     <script src="/assets/js/main.js"></script>
     </body>
 

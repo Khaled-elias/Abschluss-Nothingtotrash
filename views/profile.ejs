@@ -13,8 +13,18 @@
 
     <%- include('./partials/navGoogle') %>
         <%#= JSON.stringify(data)%>
+
             <form action="/add" method="POST" class="bietForm">
+                <div class="form-userName">
+                    <h1>
+                        Hallo: <span>
+                            <%= newItems1.userName %>
+                        </span>
+                    </h1>
+
+                </div>
                 <section class="section-form">
+
                     <article class="anzeigenType">
                         <div>
                             <p>Anzeigentyp:</p>
@@ -29,16 +39,12 @@
                         </div>
                     </article>
                     <article class="article-input">
+
                         <div class="biete-div">
 
                             <h2>Ich biete:</h2>
-<<<<<<< HEAD
                             <a href="/marktplatz">
                                 <h2>Ich suche:</h2>
-=======
-                            <a href="">
-                                <h2>Ich suche</h2>
->>>>>>> 9e4b1ebf8d1850be748afefa324f9750af0402db
                             </a>
                         </div>
                         <div class="erst-inputDiv">
@@ -90,17 +96,10 @@
                             <input type="number" name="Stücke" placeholder="Stüke" class="table-input">
                             <div>
 
-<<<<<<< HEAD
-                                <label for="New">New</label>
-                                <input type="radio" name="Frische" value="New" id="other" class="otherNew">
-                                <label for="Used">Used</label>
-                                <input type="radio" name="Frische" value="Used" id="other">
-=======
                                 <label for="New">Neu</label>
                                 <input type="radio" name="Frische" value="Neu" id="other">
                                 <label for="Used">Gebraucht</label>
                                 <input type="radio" name="Frische" value="Gebraucht" id="other">
->>>>>>> 9e4b1ebf8d1850be748afefa324f9750af0402db
                             </div>
                         </div>
 

@@ -14,13 +14,20 @@
 <body>
   <nav class="Navigation">
     <a href="/"> <img class="logo_nothing" src="/assets/img/Group85.png" alt=""></a>
-    <div class="NavBar">
+    <div class="NavBar nav-active">
       <ul class="Ul_Nav Ul_NavPrf">
         <li><a href="/marktplatz">Marktplatz</a></li>
         <li><a href="/auth/login">Community</a></li>
         <li><a href="/ueber">Über Uns</a></li>
         <li><a href="/resources">Ressourceen</a></li>
+        <li class="article-login-logout-none">
+          <p>
+            <%= newItems1.userName %>
+          </p>
+          <a href="/auth/logout">Ausloggen</a>
+        </li>
       </ul>
+
     </div>
     <div class="div-login-logout">
       <article class="article-login-logout">
